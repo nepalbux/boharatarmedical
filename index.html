@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Corporate House - Leading healthcare management and strategic consulting firm. Expert hospital operations, digital health transformation, clinical excellence, and global medical strategy services.">
+    <meta name="keywords" content="healthcare consulting, hospital management, digital health, medical strategy, clinical excellence, healthcare transformation, JCI accreditation">
+    <meta name="author" content="Corporate House">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Corporate House | Healthcare Excellence &amp; Strategic Management">
+    <meta property="og:description" content="Transforming healthcare delivery with corporate precision and medical excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://corporatehouse.healthcare">
+    <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
+    
+    <title>Corporate House | Healthcare Consulting &amp; Medical Excellence</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #10b981;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        #hero-3d, #contact-3d {
+            width: 100%;
+            height: 380px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            #hero-3d, #contact-3d {
+                height: 520px;
+            }
+        }
+
+        .mobile-menu {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        form input, form textarea, form select {
+            transition: all 0.2s ease;
+        }
+        
+        form input:focus, form textarea:focus, form select:focus {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- HEADER -->
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between px-6 py-5">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-inner">CH</div>
+                    <div class="font-semibold tracking-tight text-xl">
+                        Corporate<span class="text-emerald-600">House</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#services" class="nav-link text-gray-600 hover:text-gray-900">Services</a>
+                    <a href="#programs" class="nav-link text-gray-600 hover:text-gray-900">Programs</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-gray-900">About</a>
+                    <a href="#insights" class="nav-link text-gray-600 hover:text-gray-900">Insights</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-gray-700 p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-3xl text-sm font-semibold transition shadow-sm hidden sm:flex items-center gap-2">
+                        Get in Touch
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mobile-menu bg-white border-t">
+            <div class="px-6 py-8 flex flex-col gap-6 text-lg">
+                <a href="#services" onclick="toggleMobileMenu()" class="font-medium text-gray-700">Services</a>
+                <a href="#programs" onclick="toggleMobileMenu()" class="font-medium text-gray-700">Programs</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="font-medium text-gray-700">About Us</a>
+                <a href="#insights" onclick="toggleMobileMenu()" class="font-medium text-gray-700">Insights</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="font-medium text-gray-700">Contact</a>
+                
+                <div class="pt-6 border-t">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});toggleMobileMenu()" 
+                            class="w-full bg-emerald-600 text-white py-4 rounded-3xl font-semibold">
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-bg text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white/20 text-white text-sm font-medium px-5 py-2 rounded-3xl backdrop-blur-md">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    JCI Accredited • Trusted by 300+ organizations
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl font-semibold leading-tight tracking-tighter">
+                    Medical Excellence.<br>Corporate Precision.
+                </h1>
+                
+                <p class="text-lg md:text-xl text-emerald-100 max-w-lg">
+                    Strategic healthcare consulting, digital transformation, and operational excellence for hospitals and medical institutions worldwide.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-4 rounded-3xl font-semibold text-base flex items-center justify-center gap-3 group">
+                        Book Strategy Call
+                        <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition"></i>
+                    </button>
+                    
+                    <button onclick="watchVideo()" 
+                            class="border border-white/70 hover:bg-white/10 px-8 py-4 rounded-3xl font-medium flex items-center justify-center gap-3 transition">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Watch 2:14</span>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-6 pt-6 text-center md:text-left">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-semibold">99.2%</div>
+                        <div class="text-emerald-100 text-xs md:text-sm">Patient Outcomes</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-semibold">18+</div>
+                        <div class="text-emerald-100 text-xs md:text-sm">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-semibold">47</div>
+                        <div class="text-emerald-100 text-xs md:text-sm">Global Partners</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative order-first md:order-last">
+                <div id="hero-3d" class="shadow-2xl"></div>
+                <div class="absolute -bottom-6 -left-4 bg-white text-gray-900 rounded-3xl px-5 py-4 shadow-2xl flex items-center gap-4 text-sm">
+                    <div class="bg-emerald-100 text-emerald-600 w-10 h-10 rounded-2xl flex items-center justify-center text-2xl">🏆</div>
+                    <div class="leading-tight">
+                        <div class="font-semibold">Global Healthcare Award 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="bg-white py-8 border-b">
+        <div class="max-w-7xl mx-auto px-6 overflow-x-auto">
+            <div class="flex justify-center items-center gap-x-10 md:gap-x-16 opacity-75 whitespace-nowrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Johns_Hopkins_Medicine_logo.svg/2560px-Johns_Hopkins_Medicine_logo.svg.png" class="h-7 md:h-8" alt="Johns Hopkins Medicine">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pfizer_logo.svg/2560px-Pfizer_logo.svg.png" class="h-7 md:h-8" alt="Pfizer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Mayo_Clinic_logo.svg/2560px-Mayo_Clinic_logo.svg.png" class="h-7 md:h-8" alt="Mayo Clinic">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bayer_AG_logo.svg/2560px-Bayer_AG_logo.svg.png" class="h-7 md:h-8" alt="Bayer">
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="uppercase tracking-widest text-emerald-600 font-semibold text-sm">Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-semibold mt-3">Healthcare Solutions That Deliver</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 text-4xl">🏥</div>
+                    <h3 class="text-2xl font-semibold mb-3">Hospital Management</h3>
+                    <p class="text-gray-600">Operational excellence, revenue cycle optimization, and clinical governance.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-8 text-emerald-600 font-medium flex items-center gap-2 hover:gap-3 transition">Learn more →</button>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8 text-4xl">📱</div>
+                    <h3 class="text-2xl font-semibold mb-3">Digital Health</h3>
+                    <p class="text-gray-600">EHR implementation, telemedicine, AI diagnostics &amp; patient engagement platforms.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-8 text-emerald-600 font-medium flex items-center gap-2 hover:gap-3 transition">Learn more →</button>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-8 text-4xl">👨‍⚕️</div>
+                    <h3 class="text-2xl font-semibold mb-3">Clinical Excellence</h3>
+                    <p class="text-gray-600">Physician leadership, quality improvement, and patient safety programs.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-8 text-emerald-600 font-medium flex items-center gap-2 hover:gap-3 transition">Learn more →</button>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8 text-4xl">🌍</div>
+                    <h3 class="text-2xl font-semibold mb-3">Global Strategy</h3>
+                    <p class="text-gray-600">International accreditation, market expansion, and regulatory compliance.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-8 text-emerald-600 font-medium flex items-center gap-2 hover:gap-3 transition">Learn more →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROGRAMS -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-4">
+                <h2 class="text-4xl font-semibold">Featured Medical Programs</h2>
+                <a href="#" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="text-emerald-600 font-medium flex items-center gap-2">All Programs →</a>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-3xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-6xl">🫀</div>
+                    <div class="p-7">
+                        <h4 class="font-semibold text-xl">Cardiac Care Optimization</h4>
+                        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-6 text-emerald-600 font-medium">View Case Study →</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-6xl">🧠</div>
+                    <div class="p-7">
+                        <h4 class="font-semibold text-xl">Neurology Digital Twin</h4>
+                        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-6 text-emerald-600 font-medium">View Case Study →</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-6xl">👪</div>
+                    <div class="p-7">
+                        <h4 class="font-semibold text-xl">Maternal &amp; Child Health</h4>
+                        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-6 text-emerald-600 font-medium">View Case Study →</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-6xl">🦴</div>
+                    <div class="p-7">
+                        <h4 class="font-semibold text-xl">Joint Replacement Excellence</h4>
+                        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="mt-6 text-emerald-600 font-medium">View Case Study →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="uppercase tracking-widest text-emerald-600 font-semibold">Our Story</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold mt-3 leading-tight">Corporate House: Where Medical Excellence Meets Strategic Leadership</h2>
+                    <div class="prose mt-8 text-gray-600">
+                        <p class="text-lg">Founded in 2008, Corporate House has been at the forefront of healthcare transformation. We combine deep clinical expertise with proven corporate management practices to help hospitals, health systems, and medical groups achieve sustainable excellence.</p>
+                        <p>Our team of former hospital CEOs, renowned physicians, and digital health pioneers has successfully guided over 47 institutions across 4 continents through complex transformations.</p>
+                    </div>
+                    <div class="mt-10 grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-5xl font-semibold text-emerald-600">300+</div>
+                            <div class="text-sm text-gray-500 mt-1">Healthcare Partners</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-semibold text-emerald-600">150+</div>
+                            <div class="text-sm text-gray-500 mt-1">Successful Projects</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-3xl p-8">
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="text-4xl">🏥</div>
+                            <div>
+                                <div class="font-semibold">Clinical Leadership</div>
+                                <div class="text-sm text-gray-600">Board-certified physicians and former CMOs on every engagement</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-4xl">📈</div>
+                            <div>
+                                <div class="font-semibold">Operational Mastery</div>
+                                <div class="text-sm text-gray-600">Proven frameworks that improve both clinical outcomes and financial performance</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-4xl">🌐</div>
+                            <div>
+                                <div class="font-semibold">Global Perspective</div>
+                                <div class="text-sm text-gray-600">International best practices adapted to local regulatory environments</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSIGHTS SECTION -->
+    <section id="insights" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="uppercase tracking-widest text-emerald-600 font-semibold">Latest Insights</span>
+                <h2 class="text-4xl font-semibold mt-3">Thought Leadership in Healthcare</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="text-emerald-600 text-sm font-medium mb-4">JUNE 2026</div>
+                    <h3 class="font-semibold text-xl leading-tight mb-4">AI in Diagnostic Imaging: Current Impact and Future Roadmap</h3>
+                    <p class="text-gray-600 text-sm mb-6">How leading hospitals are reducing diagnostic turnaround by 68% using next-gen AI tools.</p>
+                    <button onclick="alert('Thank you! Full article would open here.')" class="text-emerald-600 font-medium">Read Article →</button>
+                </div>
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="text-emerald-600 text-sm font-medium mb-4">MAY 2026</div>
+                    <h3 class="font-semibold text-xl leading-tight mb-4">The Future of Hospital Revenue Cycle Management</h3>
+                    <p class="text-gray-600 text-sm mb-6">Strategies that helped our clients recover an average of $42M in previously lost revenue.</p>
+                    <button onclick="alert('Thank you! Full article would open here.')" class="text-emerald-600 font-medium">Read Article →</button>
+                </div>
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="text-emerald-600 text-sm font-medium mb-4">APRIL 2026</div>
+                    <h3 class="font-semibold text-xl leading-tight mb-4">Achieving JCI Accreditation: Lessons from 12 Successful Cases</h3>
+                    <p class="text-gray-600 text-sm mb-6">A practical playbook for international hospitals pursuing global quality standards.</p>
+                    <button onclick="alert('Thank you! Full article would open here.')" class="text-emerald-600 font-medium">Read Article →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GET IN TOUCH / CONSULTATION FORM -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Form -->
+                <div>
+                    <h2 class="text-4xl font-semibold mb-3">Patient / Client Consultation Form</h2>
+                    <p class="text-gray-600 mb-10">Submit your details. Our medical strategy team will review and contact you within 2 hours.</p>
+                    
+                    <form id="consultForm" onsubmit="submitForm(event)" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Full Name *</label>
+                                <input type="text" required class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Age *</label>
+                                <input type="number" required min="1" class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none" placeholder="45">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Gender</label>
+                                <select required class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none">
+                                    <option value="">Select</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Contact Number *</label>
+                                <input type="tel" required class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none" placeholder="+1 (555) 123-4567">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Primary Health Concern / Problem *</label>
+                            <input type="text" required class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none" placeholder="e.g., Cardiac symptoms, Joint pain...">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Recent Case History</label>
+                            <textarea class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none h-28" placeholder="Brief medical background..."></textarea>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Recent Lab Tests</label>
+                                <textarea class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none h-24" placeholder="Blood work, imaging, etc."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Current Diagnosis (if any)</label>
+                                <textarea class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none h-24" placeholder="Existing diagnosis..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-5 rounded-3xl font-semibold text-lg transition">
+                            Submit Consultation Request
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- 3D Animation -->
+                <div class="relative lg:sticky lg:top-24">
+                    <div id="contact-3d" class="shadow-2xl"></div>
+                    <div class="mt-8 bg-emerald-50 border border-emerald-100 rounded-3xl p-8 text-center">
+                        <div class="text-emerald-600 text-5xl mb-4">🩺</div>
+                        <div class="font-semibold text-xl">Confidential &amp; Secure</div>
+                        <p class="text-sm text-gray-600 mt-2">All information is protected under HIPAA-equivalent standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12">
+                <div>
+                    <div class="flex items-center gap-3 text-white mb-6">
+                        <div class="w-9 h-9 bg-emerald-600 rounded-2xl flex items-center justify-center font-bold text-2xl">CH</div>
+                        <span class="text-2xl font-semibold">Corporate House</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">Medical excellence delivered with corporate discipline.</p>
+                </div>
+                
+                <div>
+                    <div class="font-medium text-white mb-6">Company</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="#about" class="hover:text-white block">About Us</a>
+                        <a href="#" class="hover:text-white block">Our Team</a>
+                        <a href="#" class="hover:text-white block">Careers</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="font-medium text-white mb-6">Services</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="#services" class="hover:text-white block">Hospital Operations</a>
+                        <a href="#services" class="hover:text-white block">Digital Health</a>
+                        <a href="#services" class="hover:text-white block">Clinical Strategy</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="font-medium text-white mb-6">Resources</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="#insights" class="hover:text-white block">Insights</a>
+                        <a href="#" class="hover:text-white block">Case Studies</a>
+                        <a href="#" class="hover:text-white block">Webinars</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="font-medium text-white mb-6">Connect With Us</div>
+                    <div class="flex gap-6 text-3xl mb-8">
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <div class="text-xs">New York • London • Singapore • Dubai</div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-xs flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>© 2026 Corporate House. All Rights Reserved.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">HIPAA Notice</a>
+                </div>
+                <div class="text-emerald-500">
+                    Designed &amp; Developed by 
+                    <a href="https://ptcnepal.com" target="_blank" class="font-medium hover:text-emerald-400 transition underline">Grok • xAI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 3D Animation Function (reusable)
+        function createMedical3D(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+            
+            camera.position.z = 5;
+            
+            const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambient);
+            const dirLight = new THREE.DirectionalLight(0x10b981, 1.2);
+            dirLight.position.set(5, 5, 5);
+            scene.add(dirLight);
+            
+            // Central orb
+            const sphere = new THREE.Mesh(
+                new THREE.SphereGeometry(1.1, 32, 32),
+                new THREE.MeshPhongMaterial({ color: 0x10b981, shininess: 90, emissive: 0x10b981, emissiveIntensity: 0.4 })
+            );
+            scene.add(sphere);
+            
+            // Cross
+            const crossGroup = new THREE.Group();
+            const barGeo = new THREE.BoxGeometry(0.7, 0.15, 0.15);
+            const barMat = new THREE.MeshPhongMaterial({ color: 0xffffff });
+            const h = new THREE.Mesh(barGeo, barMat);
+            const v = new THREE.Mesh(barGeo, barMat);
+            v.rotation.z = Math.PI / 2;
+            crossGroup.add(h, v);
+            crossGroup.position.set(2.3, 0.3, 0);
+            scene.add(crossGroup);
+            
+            // Orbiting pills
+            const pills = [];
+            for (let i = 0; i < 6; i++) {
+                const pill = new THREE.Mesh(
+                    new THREE.CylinderGeometry(0.12, 0.12, 0.55, 16),
+                    new THREE.MeshPhongMaterial({ color: i % 2 === 0 ? 0x3b82f6 : 0xf59e0b })
+                );
+                pill.rotation.z = Math.PI / 2;
+                pill.userData = { angle: i * (Math.PI / 3), radius: 2.4 + Math.random() * 0.4 };
+                scene.add(pill);
+                pills.push(pill);
+            }
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                const t = Date.now() * 0.001;
+                
+                sphere.rotation.y = t * 0.4;
+                sphere.position.y = Math.sin(t * 1.5) * 0.08;
+                
+                crossGroup.rotation.z = t * 1.2;
+                
+                pills.forEach(p => {
+                    if (p.userData.radius) {
+                        p.userData.angle += 0.018;
+                        p.position.x = Math.cos(p.userData.angle) * p.userData.radius;
+                        p.position.y = Math.sin(p.userData.angle) * (p.userData.radius * 0.6);
+                        p.rotation.y = t * 3;
+                    }
+                });
+                
+                renderer.render(scene, camera);
+            }
+            animate();
+            
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+        }
+        
+        // Form submission
+        function submitForm(e) {
+            e.preventDefault();
+            alert("✅ Consultation request received!\n\nOur medical strategy team will review your details and contact you shortly. Thank you for trusting Corporate House.");
+            e.target.reset();
+        }
+        
+        function watchVideo() {
+            alert("▶️ Corporate House Overview\n\nDiscover how we deliver medical excellence with corporate precision.");
+        }
+        
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+        
+        // Initialize
+        window.onload = function() {
+            createMedical3D('hero-3d');
+            createMedical3D('contact-3d');
+            
+            // Close mobile menu when clicking links
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                });
+            });
+        };
+        
+        console.log('%cCorporate House Healthcare Platform - Fully Interactive', 'color:#10b981; font-family:monospace');
+    </script>
+</body>
+</html>
